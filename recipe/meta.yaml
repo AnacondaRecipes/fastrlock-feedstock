@@ -1,20 +1,18 @@
 {% set name = "fastrlock" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4af6734d92eaa3ab4373e6c9a1dd0d5ad1304e172b1521733c6c3b3d73c8fa5d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 60273f82753f59440c3ae55bdf89adeee028535cf700183b317feab708b38686
 
 build:
-  number: 1
+  number: 0
   # We need to pass --with-cython to force cython to regenerate the .c file
-  script: |
-    {{ PYTHON }} setup.py --with-cython build_ext --inplace
-    {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation
 
 requirements:
   build:
