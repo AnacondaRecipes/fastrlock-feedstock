@@ -12,7 +12,9 @@ source:
 build:
   number: 0
   # We need to pass --with-cython to force cython to regenerate the .c file
-  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation
+  script: |
+    {{ PYTHON }} setup.py --with-cython build_ext --inplace
+    {{ PYTHON }} -m pip install . --no-deps --no-build-isolation --ignore-installed --no-cache-dir -vv
 
 requirements:
   build:
