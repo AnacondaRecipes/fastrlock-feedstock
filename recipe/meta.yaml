@@ -61,6 +61,7 @@ about:
     the Python API. FastRLock is still faster also on these systems when called
     through its Cython API.
   dev_url: https://github.com/scoder/fastrlock
+  doc_url: https://github.com/scoder/fastrlock/blob/master/README.rst
 
 extra:
   recipe-maintainers:
