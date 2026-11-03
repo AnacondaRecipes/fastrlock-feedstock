@@ -32,8 +32,11 @@ requirements:
 test:
   imports:
     - fastrlock
+  source_files:
+    - fastrlock/tests/test_rlock.py
   commands:
     - pip check
+    - cd fastrlock/tests && python -m unittest test_rlock
   requires:
     - pip
 
