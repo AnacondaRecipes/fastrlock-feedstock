@@ -36,7 +36,7 @@ test:
     - fastrlock/tests/test_rlock.py
   commands:
     - pip check
-    - cd fastrlock/tests && python -m unittest test_rlock
+    - python -m unittest discover -s fastrlock/tests -p "test_rlock.py"
   requires:
     - pip
 
